@@ -13,13 +13,14 @@ export const VisibilityFilters = {
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
+let counter = 0
 
 export function addTodo(text) {
-  return { type: ADD_TODO, text }
+  return { id: counter++ , type: ADD_TODO, text }
 }
 
-export function toggleTodo(index) {
-  return { type: TOGGLE_TODO, index }
+export function toggleTodo(id) {
+  return { type: TOGGLE_TODO, id }
 }
 
 export function setVisibilityFilter(filter) {
